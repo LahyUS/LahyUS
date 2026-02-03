@@ -176,9 +176,8 @@ As a Software Engineer specializing in **Embedded Systems** and **Applied AI**, 
   <a href="https://www.linkedin.com/in/nhat-hy-la-40b379221/">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <a href="mailto:lahyus7399@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
+  <br>
+  <b>📧 Email: lahyus7399@gmail.com</b>
   <br>
   <b>📞 Phone: (+84) 836 476 472</b>
 </p>
