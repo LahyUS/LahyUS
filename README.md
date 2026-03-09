@@ -128,20 +128,19 @@ As a Software Engineer specializing in **Embedded Systems** and **Applied AI**, 
 
 ### 🌟 Personal, Freelance & Academic
 
-#### 7. 🏥 ClinicPRO: Desktop Management App (Freelance)
-> **Role**: Full Stack Developer | **Focus**: Python, Custom Widgets, Layout, Backup
+#### 7. 🏥 ClinicPRO: Clinic Management Platform (Freelance)
+> **Role**: Full Stack Developer | **Focus**: Flask, HTMX, Chart.js, Medical Charts
 >
-> ![Status](https://img.shields.io/badge/Status-Delivered-success) ![Commits](https://img.shields.io/badge/Evidence-7_Commits-blue) ![Solo](https://img.shields.io/badge/Role-Solo_Developer-red)
+> ![Status](https://img.shields.io/badge/Status-Delivered-success) ![Commits](https://img.shields.io/badge/Evidence-11_Commits-blue) ![Solo](https://img.shields.io/badge/Role-Solo_Developer-red)
 >
-> 🛠️ **Stack**: ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white) ![CustomTkinter](https://img.shields.io/badge/-CustomTkinter-blue) ![PaddleOCR](https://img.shields.io/badge/-PaddleOCR-000000?logo=paddlepaddle&logoColor=white) ![SQLite](https://img.shields.io/badge/-SQLite-003B57?logo=sqlite&logoColor=white)
+> 🛠️ **Stack**: ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white) ![HTMX](https://img.shields.io/badge/-HTMX-3D72D7) ![Chart.js](https://img.shields.io/badge/-Chart.js-FF6384) ![PaddleOCR](https://img.shields.io/badge/-PaddleOCR-000000?logo=paddlepaddle&logoColor=white)
 >
-> 📝 **Description**: A comprehensive management application for clinics, featuring OCR-based record processing, an interactive dental chart, and a scalable Flask-based web architecture.
+> 📝 **Description**: A scalable, full-featured web platform for end-to-end clinic operations, handling patient management, automated billing, and interactive medical charting.
 
 **Key Engineering Contributions**:
-*   👁️ **OCR Integration**: Implemented smart record importing using **PaddleOCR** and Tesseract with spatial parsing for Vietnamese medical forms.
-*   🦷 **Interactive Dental Chart**: Built a dynamic UI canvas for managing patient tooth states, alongside robust database schemas to store chart configurations.
-*   🌐 **Web Migration**: Architected a transition to a **Flask-based** web platform with role-based authentication and generic system catalogs.
-*   ☁️ **Resilient Data**: Built an automated backup system with daily rotation and secondary cloud sync support.
+*   🌐 **Web Architecture**: Architected a robust **Flask** and HTMX-based web application featuring role-based authentication (Owner, Doctor, Receptionist) and dynamic system catalogs.
+*   🦷 **Clinical Modules**: Engineered interactive **Dental Charts** (SVG), Kanban-style appointment boards, and comprehensive treatment/prescription tracking with dynamic pricing catalogs.
+*   📊 **Automated Operations**: Implemented smart record importing via **PaddleOCR**, rich interactive analytic dashboards using Chart.js, dynamic PDF financial reporting, and daily automated cloud syncing.
 
 
 #### 8. 🧠 Video Anomaly Detection (Collaboration)
