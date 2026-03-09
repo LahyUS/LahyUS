@@ -8,6 +8,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     *,
     *::before,
@@ -95,6 +96,47 @@
       margin: 0 auto;
     }
 
+    /* BACKGROUND SHAPES / EFFECTS */
+    .bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: -1;
+      opacity: 0.5;
+      animation: floatShape 10s infinite ease-in-out alternate;
+    }
+
+    .shape1 {
+      width: clamp(300px, 40vw, 450px);
+      height: clamp(300px, 40vw, 450px);
+      background: var(--sky-mid);
+      top: -10%;
+      right: -5%;
+    }
+
+    .shape2 {
+      width: clamp(200px, 30vw, 350px);
+      height: clamp(200px, 30vw, 350px);
+      background: #eaf6fc;
+      bottom: 10%;
+      left: -10%;
+      animation-delay: -5s;
+    }
+
+    @keyframes floatShape {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-30px, 30px) scale(1.05);
+      }
+
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+    }
+
     /* HERO */
     #hero {
       min-height: 100vh;
@@ -142,10 +184,12 @@
     }
 
     .hero-aliases span {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
       background: var(--line);
       border-radius: 4px;
-      padding: 0.15rem 0.55rem;
+      padding: 0.25rem 0.65rem;
       margin: 0.15rem;
       font-size: 0.78rem;
     }
@@ -599,17 +643,20 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-tag">✦ Open to opportunities</div>
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="hero-tag"><i class="fa-solid fa-sparkles" style="margin-right:0.3rem;"></i> Open to opportunities</div>
     <h1 class="hero-name">La Nhật <em>Hy</em></h1>
     <p class="hero-aliases">
-      <span>Embedded Software</span>
-      <span>System Architecture</span>
-      <span>Applied AI</span>
+      <span><i class="fa-solid fa-microchip"></i> Embedded Software</span>
+      <span><i class="fa-solid fa-network-wired"></i> System Architecture</span>
+      <span><i class="fa-solid fa-brain"></i> Applied AI</span>
+      <span><i class="fa-solid fa-layer-group"></i> Software Development</span>
     </p>
     <p class="hero-desc">
-      A software engineer who bridges the gap between Hardware and Intelligence. I specialize in embedded systems and
-      applied AI, building robust and smart solutions from low-level Linux optimizations to deploying Computer Vision at
-      the edge.
+      A software engineer who bridges the gap between Hardware and Intelligence. I specialize in embedded systems,
+      applied AI, and comprehensive software development, building robust systems from low-level Linux optimizations to
+      deploying scalable web platforms and AI at the edge.
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -637,21 +684,28 @@
     </div>
     <div class="about-visual reveal">
       <div class="about-card">
-        <div class="about-card-icon">⚙️</div>
+        <div class="about-card-icon"><i class="fa-solid fa-microchip"></i></div>
         <div class="about-card-text">
           <strong>Embedded Systems</strong>
           <span>Low-level optimizations, RTOS, ARM Linux</span>
         </div>
       </div>
       <div class="about-card">
-        <div class="about-card-icon">🧠</div>
+        <div class="about-card-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <div class="about-card-text">
+          <strong>Software Development</strong>
+          <span>Full-stack platforms, scalable web services</span>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon"><i class="fa-solid fa-brain"></i></div>
         <div class="about-card-text">
           <strong>Applied AI</strong>
           <span>Computer Vision, RAG, and transformers</span>
         </div>
       </div>
       <div class="about-card">
-        <div class="about-card-icon">🎥</div>
+        <div class="about-card-icon"><i class="fa-solid fa-film"></i></div>
         <div class="about-card-text">
           <strong>AV Pipelines</strong>
           <span>Multimedia streaming, sync, FFmpeg</span>
@@ -845,13 +899,13 @@
       </p>
       <div class="contact-links">
         <a class="contact-link" href="mailto:lahyus7399@gmail.com">
-          ✉️ Email me
+          <i class="fa-regular fa-envelope"></i> Email me
         </a>
         <a class="contact-link" href="https://www.linkedin.com/in/nhat-hy-la-40b379221/" target="_blank">
-          💼 LinkedIn
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
         <a class="contact-link" href="https://github.com/LahyUS" target="_blank">
-          🐙 GitHub
+          <i class="fa-brands fa-github"></i> GitHub
         </a>
       </div>
     </div>
