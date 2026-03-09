@@ -260,16 +260,16 @@
  
      \item \textbf{\faVideo\ Project: High-Performance IP Camera (IP\_Cam)}
        \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
-         \item \textbf{Description}: A high-performance audio/video pipeline featuring low-latency Opus audio integration and modular build configuration.
+         \item \textbf{Description}: A high-performance audio/video pipeline supporting Day/Night mode HAL architecture. Features low-latency Opus audio integration and modern real-time streaming via WebRTC and LiveKit.
          \item \textbf{Role}: Core System Engineer
          \item \textbf{Key Contributions}:
            \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
-              \item \textbf{Day/Night Mode (DNM)}: Developed the core HAL and State Machine to manage ISP/IR-Cut transitions. Ensured hardware configurations (Sensor registers, GPIOs) are set correctly and services run smoothly during mode switches.
+              \item \textbf{Day/Night Mode (DNM)}: Engineered the core HAL and State Machine for seamless ISP/IR-Cut transitions, managing low-level hardware triggers (Sensor logic, GPIOs) autonomously.
+              \item Built real-time A/V transmission streams utilizing \textbf{WebRTC} and \textbf{LiveKit} protocols.
               \item Integrated \textbf{Opus} codec and restored the full Resampler $\rightarrow$ Mixer $\rightarrow$ Playback pipeline.
-              \item Refined \textbf{Buildroot} and \textbf{CMake} configurations for modular feature toggling.
            \end{itemize}
-         \item \textbf{Achievement}: Achieved lip-sync accuracy with low-latency audio; Delivered robust Day/Night transitions.
-         \item \textbf{Tech Stack}: C, Buildroot, Opus, CMake, ALSA, HAL.
+         \item \textbf{Achievement}: Delivered robust Day/Night transitions and achieved scalable real-time streaming with tight lip-sync accuracy.
+         \item \textbf{Tech Stack}: C, WebRTC, LiveKit, Buildroot, Opus, HAL.
        \end{itemize}
 
 

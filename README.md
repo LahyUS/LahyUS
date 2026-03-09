@@ -51,18 +51,18 @@ As a Software Engineer specializing in **Embedded Systems** and **Applied AI**, 
 ---
 
 #### 2. 🎥 IP_Cam: High-Performance AV Pipeline
-> **Role**: Core System Engineer | **Focus**: Rainbow Capture, Opus, Buildroot
+> **Role**: Core System Engineer | **Focus**: WebRTC, LiveKit, Day/Night Mode
 >
-> ![Status](https://img.shields.io/badge/Status-Production_Ready-success) ![Commits](https://img.shields.io/badge/Evidence-32_Commits-blue)
+> ![Status](https://img.shields.io/badge/Status-Active_Development-success) ![Commits](https://img.shields.io/badge/Evidence-32_Commits-blue)
 >
-> 🛠️ **Stack**: ![C](https://img.shields.io/badge/-C-00599C?logo=c&logoColor=white) ![Buildroot](https://img.shields.io/badge/-Buildroot-292D3E?logo=buildroot&logoColor=white) ![Opus](https://img.shields.io/badge/-Opus-black) ![CMake](https://img.shields.io/badge/-CMake-064F8C?logo=cmake&logoColor=white)
+> 🛠️ **Stack**: ![C](https://img.shields.io/badge/-C-00599C?logo=c&logoColor=white) ![WebRTC](https://img.shields.io/badge/-WebRTC-333333?logo=webrtc&logoColor=white) ![LiveKit](https://img.shields.io/badge/-LiveKit-121011) ![Buildroot](https://img.shields.io/badge/-Buildroot-292D3E?logo=buildroot&logoColor=white) ![Opus](https://img.shields.io/badge/-Opus-black)
 >
-> 📝 **Description**: A high-performance audio/video pipeline for IP Cameras, featuring low-latency Opus audio integration and a robust HAL-based architecture for Day/Night mode control.
+> 📝 **Description**: A high-performance audio/video pipeline supporting Day/Night mode HAL architecture. Features low-latency Opus audio integration and modern real-time streaming via WebRTC and LiveKit.
 
 **Key Engineering Contributions**:
-*   🔊 **Low-Latency Audio**: Integrated Opus codec and restored the full **Resampler → Mixer → Playback** pipeline for multi-source mixing.
-*   🏗️ **Hardware Abstraction**: Migrated the Day/Night mode logic to a HAL architecture (`daynight_hal`), isolating it from the Vendor's SDK for improved testability.
-*   📦 **Build System Optimization**: Refined **Buildroot** configurations and **CMake** logic to support modular feature toggling.
+*   🌐 **Real-Time Streaming**: Built low-latency A/V transmission streams utilizing **WebRTC** and **LiveKit** protocols.
+*   🔊 **Low-Latency Audio**: Integrated Opus codec and restored the full **Resampler → Mixer → Playback** pipeline.
+*   🌙 **Day/Night Mode (DNM)**: Engineered the core HAL and State Machine for seamless ISP/IR-Cut transitions, managing low-level hardware logic autonomously.
 
 ---
 
