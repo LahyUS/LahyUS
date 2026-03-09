@@ -133,14 +133,15 @@ As a Software Engineer specializing in **Embedded Systems** and **Applied AI**, 
 >
 > ![Status](https://img.shields.io/badge/Status-Delivered-success) ![Commits](https://img.shields.io/badge/Evidence-7_Commits-blue) ![Solo](https://img.shields.io/badge/Role-Solo_Developer-red)
 >
-> 🛠️ **Stack**: ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) ![CustomTkinter](https://img.shields.io/badge/-CustomTkinter-blue) ![PaddleOCR](https://img.shields.io/badge/-PaddleOCR-000000?logo=paddlepaddle&logoColor=white) ![SQLite](https://img.shields.io/badge/-SQLite-003B57?logo=sqlite&logoColor=white)
+> 🛠️ **Stack**: ![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/-Flask-000000?logo=flask&logoColor=white) ![CustomTkinter](https://img.shields.io/badge/-CustomTkinter-blue) ![PaddleOCR](https://img.shields.io/badge/-PaddleOCR-000000?logo=paddlepaddle&logoColor=white) ![SQLite](https://img.shields.io/badge/-SQLite-003B57?logo=sqlite&logoColor=white)
 >
-> 📝 **Description**: A comprehensive desktop management application for clinics, featuring OCR-based record processing, automated cloud backups, and financial reporting.
+> 📝 **Description**: A comprehensive management application for clinics, featuring OCR-based record processing, an interactive dental chart, and a scalable Flask-based web architecture.
 
 **Key Engineering Contributions**:
 *   👁️ **OCR Integration**: Implemented smart record importing using **PaddleOCR** and Tesseract with spatial parsing for Vietnamese medical forms.
+*   🦷 **Interactive Dental Chart**: Built a dynamic UI canvas for managing patient tooth states, alongside robust database schemas to store chart configurations.
+*   🌐 **Web Migration**: Architected a transition to a **Flask-based** web platform with role-based authentication and generic system catalogs.
 *   ☁️ **Resilient Data**: Built an automated backup system with daily rotation and secondary cloud sync support.
-*   📄 **PDF Engine**: Developed a robust PDF report generator using ReportLab to handle complex layouts and financial tables.
 
 
 #### 8. 🧠 Video Anomaly Detection (Collaboration)

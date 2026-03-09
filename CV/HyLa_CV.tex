@@ -1,0 +1,404 @@
+%%%%
+% MTecknology's Resume
+%%%%
+% Author: Michael Lustfield
+% License: CC-BY-4
+% - https://creativecommons.org/licenses/by/4.0/legalcode.txt
+%%%%
+
+\documentclass[letterpaper,10pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN_FILE: mteck.sty
+%% NOTE: Everything between here and END_FILE can
+%% be relocated to "mteck.sty" and then included with:
+%\usepackage{mteck}
+
+% Dependencies
+% NOTE: Some packages (lastpage, hyperref) require second build!
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{bookmark}
+\usepackage{lastpage}
+
+% Sans-Serif
+%\usepackage[sfdefault]{FiraSans}
+%\usepackage[sfdefault]{roboto}
+%\usepackage[sfdefault]{noto-sans}
+%\usepackage[default]{sourcesanspro}
+
+% Serif
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+
+% Colors
+% Use with \color{Name}
+% Can wrap entire heading with {\color{accent} [...] }
+\usepackage{xcolor}
+\definecolor{accentTitle}{HTML}{003366}
+\definecolor{accentText}{HTML}{003366}
+\definecolor{accentLine}{HTML}{003366}
+
+% Misc. Options
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+
+% Adjust Margins
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\footskip}{3.7pt}
+\raggedbottom
+\raggedright
+
+% ATS Readability
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+%-----------------%
+% Custom Commands %
+%-----------------%
+
+% Centered title along with subtitle between HR
+% Usage: \documentTitle{Name}{Details}
+\newcommand{\documentTitle}[2]{
+  \begin{center}
+    {\Huge\color{accentTitle} #1}
+    \vspace{10pt}
+    {\color{accentLine} \hrule}
+    \vspace{2pt}
+    %{\footnotesize\color{accentTitle} #2}
+    \footnotesize{#2}
+    \vspace{2pt}
+    {\color{accentLine} \hrule}
+  \end{center}
+}
+
+% Create a footer with correct padding
+% Usage: \documentFooter{\thepage of X}
+\newcommand{\documentFooter}[1]{
+  \setlength{\footskip}{10.25pt}
+  \fancyfoot[C]{\footnotesize #1}
+}
+
+% Simple wrapper to set up page numbering
+% Usage: \numberedPages
+% WARNING: Must run pdflatex twice!
+\newcommand{\numberedPages}{
+  \documentFooter{\thepage/\pageref{LastPage}}
+}
+
+% Section heading with horizontal rule
+% Usage: \section{Title}
+\titleformat{\section}{
+  \vspace{-5pt}
+  \color{accentText}
+  \raggedright\large\bfseries
+}{}{0em}{}[\color{accentLine}\titlerule]
+
+% Section heading with separator and content on same line
+% Usage: \tinysection{Title}
+\newcommand{\tinysection}[1]{
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}
+  {\large{\bfseries\color{accentText}#1} {\color{accentLine} |}}
+}
+
+% Indented line with arguments left/right aligned in document
+% Usage: \heading{Left}{Right}
+\newcommand{\heading}[2]{
+  \hspace{10pt}#1\hfill#2\\
+}
+
+% Adds \textbf to \heading
+\newcommand{\headingBf}[2]{
+  \heading{\textbf{#1}}{\textbf{#2}}
+}
+
+% Adds \textit to \heading
+\newcommand{\headingIt}[2]{
+  \heading{\textit{#1}}{\textit{#2}}
+}
+
+% Template for itemized lists
+% Usage: \begin{resume_list} [items] \end{resume_list}
+\newenvironment{resume_list}{
+  \vspace{-7pt}
+  \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=30pt]
+}{
+  \end{itemize}
+  %\vspace{-2pt}
+}
+
+% Formats an item to use as an itemized title
+% Usage: \itemTitle{Title}
+\newcommand{\itemTitle}[1]{
+  \item[] \underline{#1}\vspace{4pt}
+}
+
+% Bullets used in itemized lists
+\renewcommand\labelitemi{--}
+
+%% END_FILE: mteck.sty
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+%===================%
+% John Doe's Resume %
+%===================%
+
+%\numberedPages % NOTE: lastpage requires a second build
+%\documentFooter{\thepage of 2} % Does similar without using lastpage
+\begin{document}
+
+  %---------%
+  % Heading %
+  %---------%
+
+%---------%
+  % Heading %
+  %---------%
+
+%---------%
+  % Heading %
+  %---------%
+
+  \documentTitle{LA NHAT HY \\ \vspace{0.5em} \large Embedded Linux Software Engineer}{
+    \href{tel:0836476472}{
+      \raisebox{-0.05\height} \faPhone\ (+84) 836 476 472} ~ | ~
+    \href{mailto:lahyus7399@gmail.com}{
+      \raisebox{-0.15\height} \faEnvelope\ lahyus7399@gmail.com} ~ | ~
+    \href{https://github.com/LahyUS}{
+      \raisebox{-0.15\height} \faGithub\ github.com/LahyUS}  ~ | ~
+    \href{https://www.linkedin.com/in/nhat-hy-la-40b379221/}{
+      \raisebox{-0.15\height} \faLinkedin\ linkedin.com/in/nhat-hy-la-40b379221/}
+  }
+
+  %---------%
+  % Summary %
+  %---------%
+
+  \tinysection{Summary}
+  \textbf{I bridge the gap between Hardware and Intelligence.} As a Software Engineer specializing in \textbf{Embedded Systems} and \textbf{Applied AI}, I build systems that are both robust and smart. My expertise spans from low-level C/C++ and Linux optimizations to deploying Computer Vision and RAG solutions at the edge. I am committed to evidence-based engineering, focusing on precision, clarity, and documentable results.
+
+  %--------%
+  % Skills %
+  %--------%
+
+  \section{\faTools\ SKILLS}
+ 
+   \begin{itemize}[itemsep=1pt, parsep=1pt, leftmargin=15pt, label={}]
+     \item \textbf{\faCode\ Languages}: C, C++, Python, Shell Script, SQL
+     \item \textbf{\faMicrochip\ Embedded}: ARM Linux, Buildroot, CMake, Make
+     \item \textbf{\faGlobe\ Protocols}: MQTT, ONVIF, SSL/TLS, TCP/IP
+     \item \textbf{\faBrain\ AI \& Data}: PyTorch, OpenCV, LangChain, RAG, Transformers, MySQL
+     \item \textbf{\faToolbox\ Tools}: Git, Jira, Confluence, GDB, Valgrind, VS Code, Docker
+   \end{itemize}
+ 
+   %-----------%
+   % Education %
+   %-----------%
+ 
+   \section{\faGraduationCap\ EDUCATION}
+ 
+   \headingBf{VNU-HCM University of Science}{Aug 2018 -- Sep 2024}
+   \headingIt{Bachelor of Computer Science}{GPA: 7.7/10}
+   \headingIt{Major: Computer Vision}{}
+ 
+   \section{\faCertificate\ CERTIFICATIONS}
+   \begin{resume_list}
+     \item TOEIC Listening - Reading: 825 pts | Speaking - Writing: 290 pts
+     \item Machine Learning Specialization (Coursera/DeepLearning.AI) -- \href{https://coursera.org/verify/specialization/KLJQLHVZTC92}{\underline{View Credential}}
+   \end{resume_list}
+ 
+   %------------%
+   % Experience %
+   %------------%
+ 
+%------------%
+  % Experience %
+  %------------%
+
+%------------%
+  % Experience %
+  %------------%
+
+  \section{\faBriefcase\ WORK EXPERIENCE}
+   
+   \headingBf{Ampacs Corporation}{05/2024 -- Present}
+   \headingIt{Embedded Software Engineer (R\&D)}{}
+   \begin{resume_list}
+     \item \textbf{\faSitemap\ Project: AmpacsSDK (Modular IoT Framework)}
+       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+         \item \textbf{Description}: A modular IoT Framework SDK designed for embedded devices, providing backend-agnostic MQTT connectivity and simplified HAL abstractions.
+         \item \textbf{Role}: Core SDK Developer
+         \item \textbf{Key Contributions}:
+           \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+              \item Decoupled MQTTS library from specific backends (Paho/EMQX) using opaque handles.
+              \item Implemented a dynamic callback manager for runtime registration of commands.
+           \end{itemize}
+         \item \textbf{Achievement}: Enabled seamless vendor switching without code changes.
+         \item \textbf{Tech Stack}: C, MQTT, Paho, PlantUML, Linux.
+       \end{itemize}
+
+
+
+ 
+     \item \textbf{\faVideo\ Project: High-Performance IP Camera (IP\_Cam)}
+       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+         \item \textbf{Description}: A high-performance audio/video pipeline featuring low-latency Opus audio integration and modular build configuration.
+         \item \textbf{Role}: Core System Engineer
+         \item \textbf{Key Contributions}:
+           \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+              \item \textbf{Day/Night Mode (DNM)}: Developed the core HAL and State Machine to manage ISP/IR-Cut transitions. Ensured hardware configurations (Sensor registers, GPIOs) are set correctly and services run smoothly during mode switches.
+              \item Integrated \textbf{Opus} codec and restored the full Resampler $\rightarrow$ Mixer $\rightarrow$ Playback pipeline.
+              \item Refined \textbf{Buildroot} and \textbf{CMake} configurations for modular feature toggling.
+           \end{itemize}
+         \item \textbf{Achievement}: Achieved lip-sync accuracy with low-latency audio; Delivered robust Day/Night transitions.
+         \item \textbf{Tech Stack}: C, Buildroot, Opus, CMake, ALSA, HAL.
+       \end{itemize}
+
+
+
+ 
+     \item \textbf{\faNetworkWired\ Project: ONVIF Protocol Stack}
+       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+         \item \textbf{Description}: Implementation of ONVIF Profile S/T standards ensuring interoperability for IP Cameras.
+         \item \textbf{Role}: Protocol Engineer
+         \item \textbf{Key Contributions}:
+           \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+              \item \textbf{Day/Night Integration}: Mapped ONVIF imaging commands to trigger the system's DNM engine, allowing Auto/Manual mode switching via network clients.
+              \item Resolved critical profile lookup bugs in \texttt{GetImagingSettings}.
+              \item Synchronized IR cut filter state between ONVIF, ISP, and NVRAM.
+           \end{itemize}
+         \item \textbf{Achievement}: Passed ONVIF conformance tests for Profile S/T.
+         \item \textbf{Tech Stack}: C++, gSOAP, ONVIF, Python.
+       \end{itemize}
+
+ 
+
+ 
+      \item \textbf{\faPlayCircle\ Project: Secure Media Player (SSL-FFPlayer)}
+       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+         \item \textbf{Description}: A multi-threaded, securely encrypted media player designed for real-time streaming with strict A/V synchronization.
+         \item \textbf{Role}: Lead Engineer (Solo)
+         \item \textbf{Key Contributions}:
+           \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+              \item \textbf{Architecture}: Designed a decoupled 6-thread pipeline (Network $\rightarrow$ Demux $\rightarrow$ Decode $\rightarrow$ Render) using thread-safe queues and ring buffers to isolate network I/O from playback.
+              \item \textbf{A/V Sync}: Engineered a master-slave synchronization logic where video frames are slaved to the audio clock (counted from hardware callbacks), eliminating drift.
+              \item \textbf{Push-Pull Audio}: Implemented a lock-free ring buffer model to decouple the decoding thread ("Push") from the SDL audio callback ("Pull"), preventing stuttering.
+              \item \textbf{Security}: Integrated OpenSSL/DTLS directly into the transport layer for end-to-end encrypted streaming.
+           \end{itemize}
+         \textbf{Achievement}: Built a production-grade secure player from scratch, handling jitter and latency autonomously.
+         \item \textbf{Tech Stack}: C, FFmpeg, SDL2, OpenSSL, Pthreads.
+       \end{itemize}
+   \end{resume_list}
+
+  \vspace{5pt}\hrule\vspace{5pt}
+
+  \headingBf{Renesas Design Vietnam}{08/2022 -- 05/2024}
+   \headingIt{Embedded Software Engineer}{}
+   \begin{resume_list}
+     \item \textbf{\faSync\ Project: OTA Installer (SOTA/FOTA)}
+       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+         \item \textbf{Description}: A fail-safe Firmware Over-The-Air installer for Spider S4/S4N automotive boards (Linux/Xen).
+         \item \textbf{Role}: Embedded Software Engineer
+         \item \textbf{Key Contributions}:
+            \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+              \item Implemented robust fallback mechanisms to revert to stable firmware upon failure.
+              \item Designed custom binary data frames (Checksum, Length) for reliability.
+              \item Wrote Shell scripts to orchestrate updates for dual targets (eMMC/Flash).
+            \end{itemize}
+         \item \textbf{Achievement}: Delivered a fully automated, fail-safe update mechanism for automotive grade hardware.
+         \item \textbf{Tech Stack}: C, Shell Script, Linux, Xen Hypervisor.
+       \end{itemize}
+
+
+
+ 
+     \item \textbf{\faRobot\ Project: AI Chatbot for MCAL (RAG System)}
+       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+         \item \textbf{Description}: An intelligent assistant to query complex AUTOSAR MCAL specifications using RAG.
+         \item \textbf{Role}: AI Engineer
+         \item \textbf{Key Contributions}:
+            \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+              \item Built a Retrieval-Augmented Generation pipeline using LangChain.
+              \item Optimized LLM prompts to extract accurate technical answers from PDF docs.
+            \end{itemize}
+         \item \textbf{Achievement}: Significantly reduced time for developers to find MCAL specification details.
+         \item \textbf{Tech Stack}: Python, LangChain, Flask, Gradio, MySQL, Transformers.
+       \end{itemize}
+   \end{resume_list}
+ 
+   %----------------------------%
+   % Projects %
+   %----------------------------%
+ 
+   \section{\faLaptopCode\ PROJECTS \& FREELANCE}
+ 
+   \headingBf{ClinicPRO: Clinic Management App (Freelance)}{11/2025 -- Present}
+   \begin{resume_list}
+     \item \textbf{Description}: A comprehensive management application for clinics with OCR, interactive charts, and web support.
+     \item \textbf{Role}: Full Stack Developer (Solo)
+     \item \textbf{Key Contributions}:
+        \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+           \item Implemented smart record importing using \textbf{PaddleOCR} with spatial parsing.
+           \item Built automated backup system with daily rotation and cloud sync.
+           \item Engineered an interactive dental charting UI and led the transition to a \textbf{Flask-based} web architecture.
+        \end{itemize}
+     \item \textbf{Achievement}: Deployed a complete solution handling real-world clinic operations.
+     \item \textbf{Tech Stack}: Python, Flask, CustomTkinter, PaddleOCR, SQLite, ReportLab.
+   \end{resume_list}
+ 
+   \vspace{5pt}\hrule\vspace{5pt}
+   \headingBf{Video Anomaly Detection (Thesis)}{01/2022 -- 07/2022}
+   \begin{resume_list}
+     \item \textbf{Description}: Research on detecting abnormal events in surveillance video using Deep Learning.
+     \item \textbf{Role}: AI Engineer
+     \item \textbf{Key Contributions}:
+        \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+           \item Researched CNN (Autoencoder) + Memory module architecture.
+           \item Implemented memory module for temporal feature reconstruction.
+        \end{itemize}
+     \item \textbf{Achievement}: Improved detection rates on the UCSD Ped2 dataset by tuning Image Difference thresholds.
+     \item \textbf{Tech Stack}: Python, PyTorch, OpenCV.
+   \end{resume_list}
+ 
+   \vspace{5pt}\hrule\vspace{5pt}
+   \headingBf{Academic Projects}{}
+   \begin{resume_list}
+     \item \textbf{\faImage\ Image Processing Labs}
+       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+         \item \textbf{Description}: Core image processing algorithms (Convolution, Affine Transform) implemented from scratch in C++.
+         \item \textbf{Role}: Developer
+         \item \textbf{Achievement}: Built a functional document scanner application.
+         \item \textbf{Tech Stack}: C++, OpenCV.
+       \end{itemize}
+
+
+
+
+     \item \textbf{\faCalculator\ Big Number Library}
+       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+         \item \textbf{Description}: A C++ library for 16-byte \texttt{QInt}/\texttt{QFloat} high-precision types/operators.
+         \item \textbf{Role}: Developer
+         \item \textbf{Achievement}: Created a calculator demo verifying high-precision arithmetic.
+         \item \textbf{Tech Stack}: C++, Algorithms.
+       \end{itemize}
+   \end{resume_list}
+
+\end{document}
