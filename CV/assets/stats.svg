@@ -1,0 +1,37 @@
+<svg width="400" height="325" viewBox="0 0 400 325" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #2f80ed; }
+    .stat { font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #333; }
+    .label { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #4c1; }
+    .bg { fill: #fff; stroke: #e1e4e8; }
+  </style>
+  <rect x="0.5" y="0.5" rx="4.5" width="399" height="324" class="bg"/>
+  <text x="25" y="35" class="header">Local Dev Statistics</text>
+  
+  <text x="25" y="70" class="stat">Total Commits: <b>254</b></text>
+  <text x="25" y="95" class="stat">Total Lines of Code: <b>52,288,739</b></text>
+  
+  <line x1="25" y1="110" x2="375" y2="110" stroke="#e1e4e8" />
+  
+  <text x="25" y="135" class="header" font-size="16">Top Languages</text>
+
+  <text x="25" y="160" class="stat">C</text>
+  <rect x="120" y="150" width="200.0" height="10" fill="#2f80ed" rx="2" />
+  <text x="330.0" y="160" class="stat" font-size="12">43,625,450</text>
+
+  <text x="25" y="185" class="stat">Other</text>
+  <rect x="120" y="175" width="35.66490660841321" height="10" fill="#2f80ed" rx="2" />
+  <text x="165.66490660841322" y="185" class="stat" font-size="12">7,779,488</text>
+
+  <text x="25" y="210" class="stat">C++</text>
+  <rect x="120" y="200" width="1.4481225981623114" height="10" fill="#2f80ed" rx="2" />
+  <text x="131.4481225981623" y="210" class="stat" font-size="12">315,875</text>
+
+  <text x="25" y="235" class="stat">JSON</text>
+  <rect x="120" y="225" width="0.801169959278357" height="10" fill="#2f80ed" rx="2" />
+  <text x="130.80116995927835" y="235" class="stat" font-size="12">174,757</text>
+
+  <text x="25" y="260" class="stat">Shell</text>
+  <rect x="120" y="250" width="0.5735734531105123" height="10" fill="#2f80ed" rx="2" />
+  <text x="130.5735734531105" y="260" class="stat" font-size="12">125,112</text>
+<text x="25" y="300" font-size="10" fill="#999">Last Updated: 2026-02-02</text></svg>
