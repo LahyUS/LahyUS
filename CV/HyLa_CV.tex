@@ -202,11 +202,12 @@
   \section{\faTools\ SKILLS}
  
    \begin{itemize}[itemsep=1pt, parsep=1pt, leftmargin=15pt, label={}]
-     \item \textbf{\faCode\ Languages}: C, C++, Python, Shell Script, SQL
-     \item \textbf{\faMicrochip\ Embedded}: ARM Linux, Buildroot, CMake, Make
-     \item \textbf{\faGlobe\ Protocols}: MQTT, ONVIF, SSL/TLS, TCP/IP
-     \item \textbf{\faBrain\ AI \& Data}: PyTorch, OpenCV, LangChain, RAG, Transformers, MySQL
-     \item \textbf{\faToolbox\ Tools}: Git, Jira, Confluence, GDB, Valgrind, VS Code, Docker
+     \item \textbf{\faCode\ Languages}: C11, C++17, Python 3.x, Bash, SQL, JavaScript (HTMX).
+     \item \textbf{\faMicrochip\ Embedded}: ARM Linux (Realtek/Spider), Buildroot, Xen Hypervisor, CMake, POSIX Threads, NEON SIMD.
+     \item \textbf{\faGlobe\ Protocols}: WebRTC, ONVIF (Profile S/T), MQTT, RTSP, SSL/TLS (OpenSSL/DTLS), WebSocket, mDNS (Avahi).
+     \item \textbf{\faBrain\ AI \& Data}: RAG (LangChain), Computer Vision (OpenCV), Deep Learning (PyTorch), PaddleOCR.
+     \item \textbf{\faLayerGroup\ Frameworks \& Libs}: FFmpeg, SDL2, libopus, libdatachannel, Flask, MySQL, SQLite, Matplotlib.
+     \item \textbf{\faToolbox\ Tools}: Git (GitHub/GitLab), Jira, Confluence, GDB, Valgrind, Docker, VS Code, Tkinter, Pytest.
    \end{itemize}
  
    %-----------%
@@ -239,7 +240,7 @@
 
   \section{\faBriefcase\ WORK EXPERIENCE}
    
-   \headingBf{Ampacs Corporation}{05/2024 -- Present}
+   \headingBf{Ampacs Corporation}{04/2025 -- Present}
    \headingIt{Embedded Software Engineer (R\&D)}{}
    \begin{resume_list}
      \item \textbf{\faSitemap\ Project: AmpacsSDK (Modular IoT Framework)}
@@ -255,26 +256,66 @@
          \item \textbf{Tech Stack}: C, MQTT, Paho, PlantUML, Linux.
        \end{itemize}
 
+      \item \textbf{\faMicrophone\ Project: Low-Latency VoIP \& Opus Codec Integration}
+        \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+          \item \textbf{Description}: Integration of the high-performance Opus (libopus) audio codec into the IP Camera’s ARMv7 firmware, replacing legacy codecs with voice-optimized, low-latency VoIP capabilities.
+          \item \textbf{Role}: Primary Audio Engineer
+          \item \textbf{Key Contributions}:
+            \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+               \item \textbf{CPU Optimization}: Achieved a 48\% reduction in CPU overhead (\textbf{35\% to 18\%}) by enabling fixed-point math and leveraging ARM NEON (SIMD) optimizations for the Cortex-A7 architecture.
+               \item \textbf{Pipeline Engineering}: Restored the complete \textbf{Resampler $\rightarrow$ Mixer $\rightarrow$ Playback} pipeline, enabling multi-source mixing (voice + ringtones) and resolving legacy audio glitching.
+               \item \textbf{Build Orchestration}: Migrated build integration to a Buildroot package workflow, utilizing \textbf{PkgConfig} for sysroot discovery and removing hardcoded toolchain dependencies.
+               \item \textbf{Synchronization Logic}: Engineered a monolithic timestamping mechanism and buffer profile injection to ensure jitter-free, 20ms frame pacing within the Realtek SDK buffers.
+            \end{itemize}
+          \item \textbf{Achievement}: Delivered crystal-clear two-way audio with professional-grade lip-sync accuracy and a significantly reduced system resource footprint.
+          \item \textbf{Tech Stack}: C, libopus, Buildroot, NEON SIMD, POSIX Threads, CMake, PkgConfig.
+        \end{itemize}
 
+      \item \textbf{\faLock\ Project: Secure Snapshot Encryption (AES-128-CBC)}
+        \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+          \item \textbf{Description}: A hardware-bound encryption module for IP camera snapshots, ensuring user privacy by encrypting JPEG data using keys unique to the device’s hardware (UDID).
+          \item \textbf{Role}: Primary Security Developer
+          \item \textbf{Key Contributions}:
+            \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+               \item \textbf{API Design}: Developed a C-based AES-128-CBC encryption module, exposing a \textbf{clean, high-level API} (\texttt{image\_encrypt\_file/buffer}) that decoupled complex AES-128-CBC/PKCS#7 logic from the primary application.
+               \item \textbf{Hardware-Bound Security}: Implemented a deterministic key derivation system based on the device’s UDID, ensuring that cryptographic materials are never stored on disk and are zeroed in memory after use.
+               \item \textbf{Multi-Mode Support}: Engineered both \textbf{Standard Mode} (randomly salted IVs) and \textbf{Legacy Mode} (unsalted), providing flexibility for different server-side decryption requirements.
+               \item \textbf{Verification Suite}: Built a comprehensive C test application and an interactive \textbf{OpenSSL cross-check} tool to validate server-side decryption and ensure 100\% data integrity.
+            \end{itemize}
+          \item \textbf{Achievement}: Delivered an intuitive, production-grade security library used by the entire team, protecting snapshots in transit with zero measurable performance impact.
+          \item \textbf{Tech Stack}: C, AES-CBC, libcurl, CMake, OpenSSL.
+        \end{itemize}
 
- 
-     \item \textbf{\faVideo\ Project: High-Performance IP Camera (IP\_Cam)}
-       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
-         \item \textbf{Description}: A high-performance audio/video pipeline supporting Day/Night mode HAL architecture. Features low-latency Opus audio integration and modern real-time streaming via WebRTC and LiveKit.
-         \item \textbf{Role}: Core System Engineer
-         \item \textbf{Key Contributions}:
-           \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
-              \item \textbf{Day/Night Mode (DNM)}: Engineered the core HAL and State Machine for seamless ISP/IR-Cut transitions, managing low-level hardware triggers (Sensor logic, GPIOs) autonomously.
-              \item Built real-time A/V transmission streams utilizing \textbf{WebRTC} and \textbf{LiveKit} protocols.
-              \item Integrated \textbf{Opus} codec and restored the full Resampler $\rightarrow$ Mixer $\rightarrow$ Playback pipeline.
-           \end{itemize}
-         \item \textbf{Achievement}: Delivered robust Day/Night transitions and achieved scalable real-time streaming with tight lip-sync accuracy.
-         \item \textbf{Tech Stack}: C, WebRTC, LiveKit, Buildroot, Opus, HAL.
-       \end{itemize}
+       \item \textbf{\faMoon\ Project: HAL-Driven Autonomous Day/Night Controller}
+        \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+          \item \textbf{Description}: A production-grade lighting management system for IP cameras, enabling autonomous transitions between high-fidelity color and IR-illuminated monochrome modes based on environmental light levels.
+          \item \textbf{Role}: System Software Engineer
+          \item \textbf{Key Contributions}:
+            \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+               \item \textbf{HAL Architecture}: Designed and implemented a Hardware Abstraction Layer (HAL) using C function pointers to decouple core logic from the Realtek SDK, ensuring 100\% portability to new SoC vendors.
+               \item \textbf{Autonomous State Machine}: Engineered a robust, thread-safe asynchronous state machine to monitor light sensors and synchronize binary triggers (ISP mode, IR-cut filter, and IR LED) with zero-flicker transitions.
+               \item \textbf{Automated Test Harness}: Developed a \textbf{Mock HAL} for x86 environments, allowing for 100\% logic verification and regression testing on non-embedded systems, reducing hardware-dependency during development.
+               \item \textbf{State Synchronization}: Integrated hardware transitions with ONVIF imaging standards and NVRAM, ensuring persistent state management and consistent behavior across network reboots.
+            \end{itemize}
+          \item \textbf{Achievement}: Delivered a highly portable, fail-safe system with synchronized hardware states, passing all ONVIF conformance tests for Profile S/T.
+          \item \textbf{Tech Stack}: C, Linux, Realtek SDK, POSIX Threads, Buildroot, CMake, Shell Scripting.
+        \end{itemize}
 
-
-
- 
+      \item \textbf{\faVideo\ Project: Autonomous WebRTC Streaming \& Discovery System}
+        \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+          \item \textbf{Description}: Architected a standalone P2P streaming solution enabling real-time H.264 video delivery directly from the camera to web browsers without external server dependencies.
+          \item \textbf{Role}: Streaming Software Engineer
+          \item \textbf{Key Contributions}:
+            \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+               \item \textbf{Embedded Signaling}: Developed an in-camera \textbf{WebSocket signaling server} using C++17 and libdatachannel, eliminating the need for cloud-based signaling in local network deployments.
+               \item \textbf{Zero-Config Discovery}: Integrated \textbf{mDNS (Avahi)} with dynamic port resolution and multi-homed routing, enabling automatic camera discovery and path selection across complex subnets.
+               \item \textbf{Performance Optimization}: Migrated mDNS listener loops to a \textbf{select()}-based architecture, eliminating 100\% CPU spin on embedded ARM hardware while maintaining high responsiveness.
+               \item \textbf{Race Condition Resilience}: Engineered a thread-safe \textbf{ICE candidate queuing system} in C++ to handle signaling race conditions and implemented client-side connection racing for near-instant connectivity.
+            \end{itemize}
+          \item \textbf{Achievement}: Achieved near-instant video playback (under 1 second) by building a standalone streaming host that eliminates the need for expensive external signaling servers. Also serves as a flexible architecture supporting Local, Product, and Debug modes.
+          \item \textbf{Tech Stack}: C++17, WebRTC, WebSocket, mDNS (Avahi), Python, H.264, CMake.
+        \end{itemize}
+   
      \item \textbf{\faNetworkWired\ Project: ONVIF Protocol Stack}
        \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
          \item \textbf{Description}: Implementation of ONVIF Profile S/T standards ensuring interoperability for IP Cameras.
@@ -295,7 +336,7 @@
       \item \textbf{\faPlayCircle\ Project: Secure Media Player (SSL-FFPlayer)}
        \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
          \item \textbf{Description}: A multi-threaded, securely encrypted media player designed for real-time streaming with strict A/V synchronization.
-         \item \textbf{Role}: Lead Engineer (Solo)
+         \item \textbf{Role}: Multimedia Software Engineer
          \item \textbf{Key Contributions}:
            \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
               \item \textbf{Architecture}: Designed a decoupled 6-thread pipeline (Network $\rightarrow$ Demux $\rightarrow$ Decode $\rightarrow$ Render) using thread-safe queues and ring buffers to isolate network I/O from playback.
@@ -330,75 +371,60 @@
 
 
  
-     \item \textbf{\faRobot\ Project: AI Chatbot for MCAL (RAG System)}
-       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
-         \item \textbf{Description}: An intelligent assistant to query complex AUTOSAR MCAL specifications using RAG.
-         \item \textbf{Role}: AI Engineer
-         \item \textbf{Key Contributions}:
-            \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
-              \item Built a Retrieval-Augmented Generation pipeline using LangChain.
-              \item Optimized LLM prompts to extract accurate technical answers from PDF docs.
-            \end{itemize}
-         \item \textbf{Achievement}: Significantly reduced time for developers to find MCAL specification details.
-         \item \textbf{Tech Stack}: Python, LangChain, Flask, Gradio, MySQL, Transformers.
-       \end{itemize}
+      \item \textbf{\faRobot\ Project: AI Chatbot for MCAL (RAG System)}
+        \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
+          \item \textbf{Description}: An AI assistant for MCAL (Microcontroller Abstraction Layer) developers to query complex AUTOSAR specifications and C source code using domain-aware RAG.
+          \item \textbf{Role}: AI Software Engineer
+          \item \textbf{Key Contributions}:
+             \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
+               \item \textbf{Architecture}: Architected a decoupled microservices system separating Model, Document, and DB servers, enabling multi-node deployment via secure tunneling (ngrok).
+               \item \textbf{RAG Pipeline}: Engineered a robust Retrieval-Augmented Generation pipeline using \textbf{LangChain} and \textbf{FAISS/ChromaDB}, leveraging quantized 13B models for local high-accuracy inference.
+               \item \textbf{Fine-Tuning}: Leveraged Parameter-Efficient Fine-Tuning (\textbf{PEFT}) technique, specifically \textbf{LoRA}, to adapt base LLMs to specialized AUTOSAR embedded standards and technical C syntax.
+               \item \textbf{Document Engineering}: Developed a structured data extraction engine to parse unstructured PDFs and C headers into optimized middle-data JSON for semantic indexing.
+               \item \textbf{Optimization}: Integrated \textbf{Streaming Responses} using FastAPI and implemented a secure session heartbeat mechanism with automated cleanup logic.
+             \end{itemize}
+          \item \textbf{Achievement}: Significantly reduced specification lookup time for developers by delivering context-bounded accuracy (passing 100\% of internal technical test scenarios).
+          \item \textbf{Tech Stack}: Python, LangChain, FAISS, LoRA, Transformers, FastAPI, Flask, Gradio, MySQL.
+        \end{itemize}
    \end{resume_list}
  
    %----------------------------%
    % Projects %
-   %----------------------------%
- 
-   \section{\faLaptopCode\ PROJECTS \& FREELANCE}
- 
-   \headingBf{ClinicPRO: Clinic Management Platform (Freelance)}{11/2025 -- Present}
+    %----------------------------%
+    \section{\faLaptopCode\ FREELANCE PROJECTS}
+  
+   \headingBf{ClinicPRO: Clinic Management Platform (v2 Web)}{11/2025 -- Present}
    \begin{resume_list}
-     \item \textbf{Description}: A scalable, full-featured web platform for end-to-end clinic operations, handling patient management, automated billing, and interactive medical charts.
+     \item \textbf{Description}: A high-performance, local Single-Page Application (SPA) designed for dental clinics, integrating clinical documentation, real-time scheduling, and granular financial auditing.
      \item \textbf{Role}: Full Stack Developer (Solo)
      \item \textbf{Key Contributions}:
         \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
-           \item Architected a \textbf{Flask} and HTMX-based web application with role-based auth and dynamic system catalogs.
-           \item Engineered complex modules including interactive \textbf{Dental Charts}, Kanban-style appointment boards, and comprehensive treatment/prescription tracking with dynamic pricing.
-           \item Implemented automated clinic operations: intelligent record importing via \textbf{PaddleOCR}, rich interactive metrics using Chart.js, dynamic PDF financial reporting, and daily cloud syncing.
+           \item \textbf{Architecture}: Architected a reactive **SPA experience** using **Flask and HTMX**, eliminating page reloads and providing a modern desktop-app feel with minimal client-side overhead.
+           \item \textbf{Clinical Systems}: Engineered an **interactive 32-tooth dental chart** (JSON-backed) and a 4-status **Kanban board** synchronized with **FullCalendar** for end-to-end patient workflow management.
+           \item \textbf{Financial Engine}: Developed a **partial payment tracking system** with automated debt calculation and clinic expense logging, supporting complex multi-session billing cycles.
+           \item \textbf{Security \& Data}: Implemented a **15+ table normalized SQLite schema** with 3-level **RBAC** (Owner, Doctor, Receptionist) and integrated automated database backups for local data sovereignty.
+           \item \textbf{Integration}: Leveraged **PaddleOCR** for automated patient record digitization and **Chart.js** to visualize clinic growth trends and treatment statistics.
         \end{itemize}
-     \item \textbf{Achievement}: Delivered a complete, autonomous solution capable of running full clinical and administrative operations.
-     \item \textbf{Tech Stack}: Python, Flask, HTMX, Bootstrap 5, Chart.js, SQLite, PaddleOCR.
+     \item \textbf{Achievement}: Delivered a portable, production-ready solution (bundled via **PyInstaller**) facilitating complete clinical and administrative operations for local dental practices.
+     \item \textbf{Tech Stack}: Python (Flask), HTMX, Bootstrap 5, SQLite, Chart.js, PaddleOCR, PyInstaller, Pytest.
    \end{resume_list}
  
-   \vspace{5pt}\hrule\vspace{5pt}
+   \section{\faGraduationCap\ ACADEMIC PROJECTS}
+
    \headingBf{Video Anomaly Detection (Thesis)}{01/2022 -- 07/2022}
    \begin{resume_list}
-     \item \textbf{Description}: Research on detecting abnormal events in surveillance video using Deep Learning.
-     \item \textbf{Role}: AI Engineer
+     \item \textbf{Description}: Research and system integration of deep learning architectures for abnormal event detection in video surveillance data.
+     \item \textbf{Role}: DL Researcher \& Integration Engineer
      \item \textbf{Key Contributions}:
         \begin{itemize}[itemsep=0pt, leftmargin=10pt, label=$\circ$]
-           \item Researched CNN (Autoencoder) + Memory module architecture.
-           \item Implemented memory module for temporal feature reconstruction.
+           \item \textbf{SOTA Research}: Performed a comprehensive survey of state-of-the-art anomaly detection methodologies, focused on Transformer-based and GNN architectures for time-series modeling.
+           \item \textbf{System Integration}: Architected the software integration layer to bridge complex deep learning approaches into functional surveillance frameworks, ensuring robust runtime data flow.
+           \item \textbf{Model Evaluation}: Conducted rigorous training and evaluation cycles on benchmark datasets (UCSD Ped2, CUHK Avenue), optimizing hyperparameters and binary detection thresholds.
+           \item \textbf{Visualization}: Engineered a pixel-wise \textbf{Image Similarity Module} to quantify and visualize anomalies through reconstruction error heatmaps and difference-mask generation.
         \end{itemize}
-     \item \textbf{Achievement}: Improved detection rates on the UCSD Ped2 dataset by tuning Image Difference thresholds.
-     \item \textbf{Tech Stack}: Python, PyTorch, OpenCV.
+     \item \textbf{Achievement}: Successfully integrated advanced DL research into a functional surveillance architecture, providing meaningful visual intuition for abnormal event localization.
+     \item \textbf{Tech Stack}: Python, PyTorch (CUDA), OpenCV, Matplotlib, Numpy.
    \end{resume_list}
- 
-   \vspace{5pt}\hrule\vspace{5pt}
-   \headingBf{Academic Projects}{}
-   \begin{resume_list}
-     \item \textbf{\faImage\ Image Processing Labs}
-       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
-         \item \textbf{Description}: Core image processing algorithms (Convolution, Affine Transform) implemented from scratch in C++.
-         \item \textbf{Role}: Developer
-         \item \textbf{Achievement}: Built a functional document scanner application.
-         \item \textbf{Tech Stack}: C++, OpenCV.
-       \end{itemize}
 
-
-
-
-     \item \textbf{\faCalculator\ Big Number Library}
-       \begin{itemize}[itemsep=1pt, leftmargin=15pt, label=-]
-         \item \textbf{Description}: A C++ library for 16-byte \texttt{QInt}/\texttt{QFloat} high-precision types/operators.
-         \item \textbf{Role}: Developer
-         \item \textbf{Achievement}: Created a calculator demo verifying high-precision arithmetic.
-         \item \textbf{Tech Stack}: C++, Algorithms.
-       \end{itemize}
-   \end{resume_list}
 
 \end{document}
