@@ -157,7 +157,7 @@
     }
 
     .hero-name {
-      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
       letter-spacing: -1px;
     }
 
@@ -182,10 +182,10 @@
     }
 
     .hero-desc {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--text-muted);
       line-height: 1.8;
-      max-width: 650px;
+      max-width: 750px;
     }
 
     /* Buttons */
@@ -198,8 +198,8 @@
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.8rem 1.8rem;
+      gap: 0.6rem;
+      padding: 0.9rem 2rem;
       border-radius: 12px;
       font-weight: 600;
       text-decoration: none;
@@ -244,87 +244,132 @@
     }
 
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
     }
 
     /* About Section */
     #about {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
     }
 
     @media(max-width: 900px) {
       #about {
         grid-template-columns: 1fr;
+        gap: 3rem;
       }
     }
 
     .about-text p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
 
     .about-text strong {
       color: var(--text-main);
+      font-weight: 600;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
 
     .about-card {
-      padding: 1.5rem;
+      padding: 1.8rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      transition: transform 0.3s, border-color 0.3s;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .about-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px) scale(1.02);
       border-color: var(--accent-1);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     }
 
     .about-card i {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--accent-1);
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .about-card h4 {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     .about-card p {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--text-muted);
       margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Domain Tabs/Grouping */
+    .domain-container {
+      margin-bottom: 6rem;
+    }
+
+    .domain-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .domain-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--border), transparent);
+    }
+
+    .domain-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .domain-title i {
+      color: var(--accent-1);
+      font-size: 1.4rem;
     }
 
     /* Projects */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2.5rem;
     }
 
     .project-card {
       display: flex;
       flex-direction: column;
-      padding: 2rem;
-      transition: all 0.3s;
+      padding: 2.2rem;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
       position: relative;
       overflow: hidden;
+      height: 100%;
     }
 
     .project-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(56, 189, 248, 0.3);
-      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.05);
+      border-color: rgba(56, 189, 248, 0.4);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     }
 
     .project-card::before {
@@ -333,130 +378,149 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
+      height: 4px;
       background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.4s ease;
+      transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
     .project-card:hover::before {
       transform: scaleX(1);
     }
 
-    /* ADD IMAGE PLACEHOLDER FOR PROJECTS */
     .project-image {
       width: 100%;
-      height: 180px;
+      height: 200px;
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.02);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       overflow: hidden;
-      border: 1px dashed var(--border);
+      border: 1px solid var(--border);
     }
 
     .project-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
     }
 
     .project-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .project-num {
       font-family: 'Fira Code', monospace;
       color: var(--accent-1);
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      opacity: 0.5;
+      opacity: 0.6;
     }
 
     .project-links a {
-      color: var(--text-main);
-      font-size: 1.2rem;
-      transition: color 0.3s;
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      transition: all 0.3s;
     }
 
     .project-links a:hover {
       color: var(--accent-1);
+      transform: translateY(-2px);
     }
 
     .project-title {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       margin-bottom: 1rem;
+      color: var(--text-main);
     }
 
     .project-desc {
       color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      margin-bottom: 1.8rem;
       flex-grow: 1;
+      line-height: 1.7;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     .project-tags span {
       font-family: 'Fira Code', monospace;
       font-size: 0.75rem;
       color: var(--accent-1);
-      background: rgba(56, 189, 248, 0.05);
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.08);
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      transition: all 0.3s;
+    }
+
+    .project-card:hover .project-tags span {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: rgba(56, 189, 248, 0.3);
     }
 
     /* Skills */
     .skills-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
     .skill-category {
-      padding: 2rem;
+      padding: 2.2rem;
+      height: 100%;
     }
 
     .skill-header {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
     }
 
     .skill-header i {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: var(--accent-1);
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .skill-header h3 {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
     .skill-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     .skill-item {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 1rem;
       color: var(--text-muted);
+      font-size: 1.05rem;
     }
 
     .skill-item i {
@@ -470,34 +534,66 @@
     }
 
     .contact-box {
-      padding: 4rem 2rem;
-      max-width: 700px;
+      padding: 6rem 2rem;
+      max-width: 800px;
       margin: 0 auto;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 1.5rem;
     }
 
     .contact-box p {
       color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
+      font-size: 1.25rem;
+      margin-bottom: 3.5rem;
+      line-height: 1.8;
     }
 
     .contact-links {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
+    }
+
+    .contact-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: all 0.3s;
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-link:hover {
+      color: var(--accent-1);
+      border-color: var(--accent-1);
+      background: rgba(56, 189, 248, 0.05);
+      transform: translateY(-3px);
+    }
+
+    .contact-link i {
+      font-size: 1.4rem;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 3rem;
       color: var(--text-muted);
       border-top: 1px solid var(--border);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      background: rgba(0, 0, 0, 0.2);
     }
 
-    /* Animations */
+    /* Scroll animations */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -508,6 +604,24 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    @media(max-width: 600px) {
+      .hero-name {
+        font-size: 3rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -515,17 +629,17 @@
 
   <!-- Background Glows -->
   <div
-    style="position:fixed; top:-200px; left:-200px; width:500px; height:500px; background:var(--accent-2); filter:blur(150px); opacity:0.1; z-index:-1; border-radius:50%; pointer-events:none;">
+    style="position:fixed; top:-200px; left:-200px; width:600px; height:600px; background:var(--accent-2); filter:blur(180px); opacity:0.08; z-index:-1; border-radius:50%; pointer-events:none;">
   </div>
   <div
-    style="position:fixed; bottom:-200px; right:-200px; width:500px; height:500px; background:var(--accent-1); filter:blur(150px); opacity:0.1; z-index:-1; border-radius:50%; pointer-events:none;">
+    style="position:fixed; bottom:-200px; right:-200px; width:600px; height:600px; background:var(--accent-1); filter:blur(180px); opacity:0.08; z-index:-1; border-radius:50%; pointer-events:none;">
   </div>
 
   <nav>
     <a href="#hero" class="nav-logo">sunny<span class="gradient-text">hope</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#projects">Work</a></li>
+      <li><a href="#projects">Portfolio</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -534,329 +648,396 @@
   <section id="hero">
     <div class="hero-content reveal">
       <div class="hero-tag"><i class="fa-solid fa-satellite-dish"></i> Crafting Systems & Intelligence</div>
-      <h1 class="hero-name">La Nhật <span class="gradient-text">Hy</span></h1>
+      <h1 class="hero-name">La Nhat <span class="gradient-text">Hy</span></h1>
       <div class="hero-aliases">
-        <span><i class="fa-solid fa-code"></i> Software Development</span>
         <span><i class="fa-solid fa-microchip"></i> Embedded Systems</span>
+        <span><i class="fa-solid fa-code"></i> Multimedia Architecture</span>
+        <span><i class="fa-solid fa-code"></i> Software Development</span>
         <span><i class="fa-solid fa-brain"></i> Applied AI</span>
       </div>
       <p class="hero-desc">
-        I am a <strong>Software Engineer</strong> who builds comprehensive and robust software platforms. I specialize
-        in pure software development across the stack, deeply integrating hardware-level optimizations with applied
-        intelligence. From secure embedded kernels to scalable web platforms and end-to-end RAG AI
-        pipelines, I bridge the physical and abstract.
+        Embedded Software Engineer specialized in building <strong>high-performance real-time systems</strong>.
+        Architecting secure media pipelines (WebRTC/FFmpeg) and bridging the gap
+        between low-level Linux optimizations and production-grade AI intelligence.
       </p>
       <div class="btn-group">
-        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-folder-open"></i> Explore Work</a>
-        <a href="#contact" class="btn btn-outline"><i class="fa-regular fa-paper-plane"></i> Contact Me</a>
+        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Explore Work</a>
+        <a href="#contact" class="btn btn-outline"><i class="fa-regular fa-paper-plane"></i> Get in Touch</a>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="about-text reveal">
-      <div class="section-heading" style="margin-bottom: 2rem;">
-        <span class="section-label">01. Who am I?</span>
-        <h2 class="section-title">Behind the <span class="gradient-text">Code</span></h2>
+      <div class="section-heading" style="margin-bottom: 2.5rem;">
+        <span class="section-label">01. Background</span>
+        <h2 class="section-title">Behind the <span class="gradient-text">Systems</span></h2>
       </div>
 
       <div class="project-image"
-        style="width: 160px; height: 160px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3);">
+        style="width: 180px; height: 180px; border-radius: 24px; overflow: hidden; border: 2px solid var(--accent-1); margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);">
         <img src="./assets/portrait.jpg" alt="La Nhật Hy - Portrait"
           style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
 
-      <p>Hey, I'm <strong>Hy</strong>. I am first and foremost a <strong>Software Engineer</strong> who loves building
-        complete products from the ground up.</p>
-      <p>While my roots are deep in <strong>C/C++</strong> and <strong>Embedded Linux</strong> systems, I am highly
-        capable in full-stack web architectures. I am not an AI researcher; rather, I am an engineer who excels at
-        taking <strong>AI capabilities</strong> out of the research lab and applying them directly to real-world
-        applications and edge devices.</p>
-      <p>I value an engineering-first problem-solving loop: understanding constraints, architecting optimally, and
-        writing beautifully clean code.</p>
+      <p>I thrive at the intersection of <strong>hardware and abstract logic</strong>. While deep in C/C++ Linux
+        internals,
+        I am equally at home architecting full-stack solutions and RAG pipelines.</p>
+      <p>My approach is <strong>evidence-based engineering</strong>: precision, cross-platform portability, and
+        documentable performance metrics. Currently pushing the boundaries of <strong>multimedia streaming</strong>
+        and <strong>IoT framework design</strong> at Ampacs Corporation.</p>
     </div>
 
     <div class="about-grid">
-      <div class="about-card glass reveal">
-        <i class="fa-solid fa-layer-group"></i>
-        <h4>Software Development</h4>
-        <p>Full-stack platforms, scalable web services, clean architecture, and pure application engineering.</p>
-      </div>
       <div class="about-card glass reveal" style="transition-delay: 0.1s;">
         <i class="fa-solid fa-microchip"></i>
         <h4>Embedded Systems</h4>
-        <p>Low-level optimizations, ARM Linux, RTOS, protocols, and reliable hardware abstractions.</p>
+        <p>Linux kernel-level optimizations, ARM architecture, modular IoT SDKs, and hardware-bound security frameworks.
+        </p>
+      </div>
+      <div class="about-card glass reveal" style="transition-delay: 0.3s;">
+        <i class="fa-solid fa-film"></i>
+        <h4>Multimedia & AV</h4>
+        <p>Real-time A/V synchronization, secure streaming (DTLS), and high-performance codec integration (Opus/NEON).
+        </p>
       </div>
       <div class="about-card glass reveal" style="transition-delay: 0.2s;">
         <i class="fa-solid fa-brain"></i>
         <h4>Applied AI</h4>
-        <p>Deploying models in production, orchestrating RAG pipelines, and edge Computer Vision logic.</p>
+        <p>Architecting multi-node RAG systems, LoRA fine-tuning for technical domains, and edge Computer Vision
+          deployment.</p>
       </div>
-      <div class="about-card glass reveal" style="transition-delay: 0.3s;">
-        <i class="fa-solid fa-film"></i>
-        <h4>AV Pipelines</h4>
-        <p>Multimedia streaming, strictly synchronized A/V processing, and deep FFmpeg integration.</p>
+      <div class="about-card glass reveal">
+        <i class="fa-solid fa-code"></i>
+        <h4>Software Development</h4>
+        <p>Full-stack platforms, scalable web services, clean architecture, and reactive SPA engineering using
+          Flask/HTMX.</p>
       </div>
     </div>
   </section>
 
   <section id="projects">
     <div class="section-heading reveal">
-      <span class="section-label">02. Selected Portfolio</span>
-      <h2 class="section-title">Things I've <span class="gradient-text">Built</span></h2>
+      <span class="section-label">02. Selected Work</span>
+      <h2 class="section-title">Project <span class="gradient-text">Showcase</span></h2>
     </div>
 
-    <div class="projects-grid">
+    <!-- Domain: Multimedia & Streaming -->
+    <div class="domain-container reveal">
+      <div class="domain-header">
+        <h3 class="domain-title"><i class="fa-solid fa-play-circle"></i> Multimedia & Real-Time Streaming</h3>
+      </div>
+      <div class="projects-grid">
+        <!-- Secure Media Player -->
+        <div class="project-card glass">
+          <div class="project-top">
+            <span class="project-num">01</span>
+            <div class="project-links"><i class="fa-solid fa-lock" title="Security Focus"
+                style="color:var(--accent-1);"></i></div>
+          </div>
+          <h3 class="project-title">SSL-FFPlayer</h3>
+          <p class="project-desc">Decoupled 6-thread secure player with strict master-audio clock synchronization.
+            Integrated OpenSSL/DTLS directly into the transport layer to eliminate A/V drift during encrypted streaming.
+          </p>
+          <div class="project-tags">
+            <span>C</span>
+            <span>FFmpeg</span>
+            <span>SDL2</span>
+            <span>OpenSSL</span>
+            <span>Pthreads</span>
+          </div>
+        </div>
 
-      <div class="project-card glass reveal">
-        <div class="project-image" style="padding:0; border:1px solid var(--border);">
-          <img src="./assets/ClinicPRO_demo.jpg" alt="ClinicPRO Demo" />
+        <!-- WebRTC -->
+        <div class="project-card glass">
+          <div class="project-top">
+            <span class="project-num">02</span>
+          </div>
+          <h3 class="project-title">Autonomous WebRTC Host</h3>
+          <p class="project-desc">Standalone P2P streaming solution with embedded WebSocket signaling and mDNS
+            discovery. Built a signaling-server directly in-camera to eliminate cloud dependencies for local
+            deployments.</p>
+          <div class="project-tags">
+            <span>C++17</span>
+            <span>WebRTC</span>
+            <span>mDNS (Avahi)</span>
+            <span>WebSocket</span>
+            <span>H.264</span>
+          </div>
         </div>
-        <div class="project-top">
-          <span class="project-num">01</span>
-          <div class="project-links"><i class="fa-solid fa-star" title="Highlight" style="color: #fbbf24;"></i></div>
-        </div>
-        <h3 class="project-title">ClinicPRO</h3>
-        <p class="project-desc">A scalable, full-featured web platform for end-to-end clinic operations. Engineered
-          interactive Dental Charts, Kanban appointment boards, AI OCR pipelines, and automated reporting.</p>
-        <div class="project-tags">
-          <span>Flask</span>
-          <span>HTMX</span>
-          <span>Chart.js</span>
-          <span>PaddleOCR</span>
+
+        <!-- VoIP/Opus -->
+        <div class="project-card glass">
+          <div class="project-top">
+            <span class="project-num">03</span>
+          </div>
+          <h3 class="project-title">Low-Latency VoIP Stack</h3>
+          <p class="project-desc">Integrated and Optimized Opus codec (libopus) for ARMv7, achieving 48% reduction in
+            CPU
+            overhead using
+            NEON SIMD. Engineered a monolithic timestamping mechanism for jitter-free 20ms frame pacing.</p>
+          <div class="project-tags">
+            <span>C</span>
+            <span>Opus</span>
+            <span>NEON SIMD</span>
+            <span>Buildroot</span>
+            <span>POSIX</span>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="project-card glass reveal" style="transition-delay: 0.1s;">
-        <div class="project-image" style="padding:0; border:1px solid var(--border);">
-          <img src="./assets/AmpacsSDK_IP_Cam.jpg" alt="AmpacsSDK & IP Camera Demo" />
+    <!-- Domain: Embedded Systems & IoT -->
+    <div class="domain-container reveal">
+      <div class="domain-header">
+        <h3 class="domain-title"><i class="fa-solid fa-microchip"></i> Embedded Systems & IoT Infrastructure</h3>
+      </div>
+      <div class="projects-grid">
+        <!-- AmpacsSDK -->
+        <div class="project-card glass">
+          <div class="project-image" style="padding:0; border:1px solid var(--border);">
+            <img src="./assets/AmpacsSDK_IP_Cam.jpg" alt="AmpacsSDK" />
+          </div>
+          <div class="project-top">
+            <span class="project-num">04</span>
+          </div>
+          <h3 class="project-title">AmpacsSDK IoT Framework</h3>
+          <p class="project-desc">Modular dual-flow command dispatching system with runtime handler overrides. Decoupled
+            transport layer supporting MQTTS and thread-safe dynamic callback registration.</p>
+          <div class="project-tags">
+            <span>C</span>
+            <span>MQTTS</span>
+            <span>JSON-C</span>
+            <span>CMake</span>
+            <span>Architecture</span>
+          </div>
         </div>
-        <div class="project-top">
-          <span class="project-num">02</span>
+
+        <!-- Day/Night Controller -->
+        <div class="project-card glass">
+          <div class="project-top">
+            <span class="project-num">05</span>
+          </div>
+          <h3 class="project-title">Autonomous Day/Night Controller</h3>
+          <p class="project-desc">HAL-driven lighting management system with hardware state synchronization. Integrated
+            with ONVIF imaging standards and NVRAM for persistent state management and zero-flicker transitions.</p>
+          <div class="project-tags">
+            <span>C</span>
+            <span>HAL</span>
+            <span>State Machine</span>
+            <span>ONVIF S/T</span>
+            <span>Linux</span>
+          </div>
         </div>
-        <h3 class="project-title">AmpacsSDK &amp; IP Camera</h3>
-        <p class="project-desc">A high-performance audio/video pipeline supporting Day/Night mode HAL architecture.
-          Features low-latency Opus audio integration and modern real-time streaming via WebRTC and LiveKit.</p>
-        <div class="project-tags">
-          <span>C</span>
-          <span>WebRTC</span>
-          <span>LiveKit</span>
-          <span>Buildroot</span>
-          <span>MQTTS</span>
-          <span>Cmake/Makefile</span>
-          <span>Opus</span>
+
+        <!-- Snapshot Encryption -->
+        <div class="project-card glass">
+          <div class="project-top">
+            <span class="project-num">06</span>
+          </div>
+          <h3 class="project-title">Secure Snapshot (AES-128-CBC)</h3>
+          <p class="project-desc">Hardware-bound encryption module using UDID-derived keys. Implemented a modern salted
+            IV approach and legacy support, ensuring sensitive data is never stored in plain text.</p>
+          <div class="project-tags">
+            <span>C</span>
+            <span>OpenSSL</span>
+            <span>AES-CBC</span>
+            <span>Cryptography</span>
+          </div>
+        </div>
+
+        <!-- OTA Update -->
+        <div class="project-card glass">
+          <div class="project-top">
+            <span class="project-num">07</span>
+          </div>
+          <h3 class="project-title">Automotive OTA Installer</h3>
+          <p class="project-desc">Fail-safe FOTA installer for automotive Linux/Xen. Engineered robust fallback
+            mechanisms and custom binary data frames for reliability on Spider S4 hardware.</p>
+          <div class="project-tags">
+            <span>C</span>
+            <span>Shell Script</span>
+            <span>Xen Hypervisor</span>
+            <span>Linux</span>
+          </div>
+        </div>
+
+        <!-- ONVIF Stack -->
+        <div class="project-card glass">
+          <div class="project-top">
+            <span class="project-num">08</span>
+          </div>
+          <h3 class="project-title">ONVIF Protocol Stack</h3>
+          <p class="project-desc">Full ONVIF Profile S/T compliance ensuring device interoperability. Mapped imaging
+            commands to internal DNM engines and resolved critical profile lookup.</p>
+          <div class="project-tags">
+            <span>C++</span>
+            <span>gSOAP</span>
+            <span>ONVIF</span>
+            <span>Python</span>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="project-card glass reveal" style="transition-delay: 0.2s;">
-
-        <div class="project-top">
-          <span class="project-num">03</span>
+    <!-- Domain: AI & Intelligent Systems -->
+    <div class="domain-container reveal">
+      <div class="domain-header">
+        <h3 class="domain-title"><i class="fa-solid fa-brain"></i> AI & Intelligent Systems</h3>
+      </div>
+      <div class="projects-grid">
+        <!-- AI Chatbot -->
+        <div class="project-card glass">
+          <div class="project-top">
+            <span class="project-num">09</span>
+          </div>
+          <h3 class="project-title">RAG Assistant for MCAL</h3>
+          <p class="project-desc">LangChain-based RAG pipeline for AUTOSAR specs. Integrated LoRA fine-tuning for
+            technical C syntax and FAISS vector indexing for high-accuracy local inference.</p>
+          <div class="project-tags">
+            <span>FastAPI</span>
+            <span>LangChain</span>
+            <span>LoRA</span>
+            <span>Transformers</span>
+            <span>FAISS</span>
+          </div>
         </div>
-        <h3 class="project-title">Secure Media Player</h3>
-        <p class="project-desc">A securely encrypted streaming player (SSL-FFPlayer) featuring a decoupled 6-thread
-          pipeline, master-audio clock A/V sync, and strict DTLS transport.</p>
-        <div class="project-tags">
-          <span>C</span>
-          <span>FFmpeg</span>
-          <span>OpenSSL</span>
+
+        <!-- Video Anomaly Detection -->
+        <div class="project-card glass">
+          <div class="project-image" style="padding:0; border:1px solid var(--border);">
+            <img src="./assets/avenue_demo.png" alt="Anomaly Detection Demo" />
+          </div>
+          <div class="project-top">
+            <span class="project-num">10</span>
+          </div>
+          <h3 class="project-title">Video Anomaly Detection</h3>
+          <p class="project-desc">Thesis research on abnormal event localized tracking. Engineered an Image Similarity
+            Module for pixel-wise reconstruction error visualization using deep Autoencoders.</p>
+          <div class="project-tags">
+            <span>PyTorch</span>
+            <span>CUDA</span>
+            <span>OpenCV</span>
+            <span>Deep Learning</span>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="project-card glass reveal">
-        <div class="project-top">
-          <span class="project-num">04</span>
-        </div>
-        <h3 class="project-title">AI Chatbot for MCAL</h3>
-        <p class="project-desc">An intelligent assistant built to query complex AUTOSAR specifications using a
-          LangChain-based Retrieval-Augmented Generation (RAG) pipeline.</p>
-        <div class="project-tags">
-          <span>Python</span>
-          <span>LangChain</span>
-          <span>RAG</span>
+    <!-- Domain: Full-Stack Web Platforms -->
+    <div class="domain-container reveal">
+      <div class="domain-header">
+        <h3 class="domain-title"><i class="fa-solid fa-globe"></i> Full-Stack Web Platforms</h3>
+      </div>
+      <div class="projects-grid">
+        <!-- ClinicPRO -->
+        <div class="project-card glass">
+          <div class="project-image" style="padding:0; border:1px solid var(--border);">
+            <img src="./assets/ClinicPRO_demo.jpg" alt="ClinicPRO Demo" />
+          </div>
+          <div class="project-top">
+            <span class="project-num">11</span>
+          </div>
+          <h3 class="project-title">ClinicPRO Management</h3>
+          <p class="project-desc">Reactive SPA for dental clinics. Features a JSON-backed 32-tooth interactive chart,
+            Kanban workflows, PaddleOCR digitization, and granular RBAC financial auditing.</p>
+          <div class="project-tags">
+            <span>Flask</span>
+            <span>HTMX</span>
+            <span>SQLite</span>
+            <span>PaddleOCR</span>
+            <span>Chart.js</span>
+          </div>
         </div>
       </div>
-
-      <div class="project-card glass reveal" style="transition-delay: 0.1s;">
-        <div class="project-top">
-          <span class="project-num">05</span>
-        </div>
-        <h3 class="project-title">ONVIF Protocol Stack</h3>
-        <p class="project-desc">Implementation of ONVIF Profile S/T standards ensuring interoperability for IP Cameras
-          through reliable SOAP services for edge devices.</p>
-        <div class="project-tags">
-          <span>C++</span>
-          <span>gSOAP</span>
-          <span>ONVIF</span>
-        </div>
-      </div>
-
-      <div class="project-card glass reveal" style="transition-delay: 0.2s;">
-        <div class="project-top">
-          <span class="project-num">06</span>
-        </div>
-        <h3 class="project-title">OTA Installer</h3>
-        <p class="project-desc">A fail-safe Firmware Over-The-Air (SOTA/FOTA) installer for automotive boards operating
-          on Linux/Xen environments with robust fallback memory support.</p>
-        <div class="project-tags">
-          <span>C</span>
-          <span>Shell Script</span>
-          <span>Xen</span>
-        </div>
-      </div>
-
-      <div class="project-card glass reveal">
-        <div class="project-image" style="padding:0; border:1px solid var(--border);">
-          <img src="./assets/avenue_demo.png" alt="Anomaly Detection Demo" />
-        </div>
-        <div class="project-top">
-          <span class="project-num">07</span>
-        </div>
-        <h3 class="project-title">Video Anomaly Detection</h3>
-        <p class="project-desc">Research on detecting abnormal events in surveillance video using Deep Learning.
-          Designed and implemented a custom CNN (Autoencoder) + Memory module.</p>
-        <div class="project-tags">
-          <span>Python</span>
-          <span>PyTorch</span>
-          <span>OpenCV</span>
-        </div>
-      </div>
-
-      <div class="project-card glass reveal" style="transition-delay: 0.1s;">
-        <div class="project-top">
-          <span class="project-num">08</span>
-        </div>
-        <h3 class="project-title">Image Processing Labs</h3>
-        <p class="project-desc">Document scanner prototype implementing core image processing algorithms like
-          Convolution, Filtering, and Affine Transforms entirely from scratch.</p>
-        <div class="project-tags">
-          <span>C++</span>
-          <span>OpenCV</span>
-          <span>Algorithms</span>
-        </div>
-      </div>
-
-      <div class="project-card glass reveal" style="transition-delay: 0.2s;">
-        <div class="project-top">
-          <span class="project-num">09</span>
-        </div>
-        <h3 class="project-title">Big Number Library</h3>
-        <p class="project-desc">A core C++ library implementing 16-byte QInt and QFloat high-precision data types
-          natively supporting complex bitwise and arithmetic operator overloading.</p>
-        <div class="project-tags">
-          <span>C++</span>
-          <span>Data Structures</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <section id="skills">
     <div class="section-heading reveal">
-      <span class="section-label">03. The Toolkit</span>
-      <h2 class="section-title">Languages &amp; <span class="gradient-text">Technologies</span></h2>
+      <span class="section-label">03. Expertise</span>
+      <h2 class="section-title">Technical <span class="gradient-text">Toolkit</span></h2>
     </div>
 
     <div class="skills-container">
       <div class="skill-category glass reveal">
         <div class="skill-header">
-          <i class="fa-solid fa-code"></i>
-          <h3>Core Languages</h3>
+          <i class="fa-solid fa-microchip"></i>
+          <h3>Embedded & Multimedia</h3>
         </div>
         <ul class="skill-list">
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> C / C++</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> Python</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> Shell Script</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> SQL</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> C11 / C++17 Architecture</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> WebRTC / RTSP / MQTT / DTLS</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> FFmpeg / SDL2 / libopus</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> ARM Linux / Buildroot / Xen</li>
         </ul>
       </div>
 
       <div class="skill-category glass reveal" style="transition-delay: 0.1s;">
         <div class="skill-header">
-          <i class="fa-solid fa-microchip"></i>
-          <h3>Embedded / Protocols</h3>
+          <i class="fa-solid fa-brain"></i>
+          <h3>AI & Applied Logic</h3>
         </div>
         <ul class="skill-list">
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> ARM Linux / Buildroot</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> CMake / Make</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> MQTT / ONVIF</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> SSL/TLS / TCP/IP</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> RAG (LangChain / FAISS)</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> DL (PyTorch / CUDA)</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> CV (OpenCV / PaddleOCR)</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> LoRA Fine-Tuning</li>
         </ul>
       </div>
 
       <div class="skill-category glass reveal" style="transition-delay: 0.2s;">
         <div class="skill-header">
-          <i class="fa-solid fa-database"></i>
-          <h3>Web &amp; AI</h3>
+          <i class="fa-solid fa-laptop-code"></i>
+          <h3>Software Engineering</h3>
         </div>
         <ul class="skill-list">
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> Flask / HTMX</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> WebRTC / LiveKit</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> PyTorch / OpenCV</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> LangChain / RAG</li>
-        </ul>
-      </div>
-
-      <div class="skill-category glass reveal" style="transition-delay: 0.3s;">
-        <div class="skill-header">
-          <i class="fa-solid fa-screwdriver-wrench"></i>
-          <h3>Tools &amp; Ops</h3>
-        </div>
-        <ul class="skill-list">
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> Git / Docker</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> GDB / Valgrind</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> Jira / Confluence</li>
-          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> Linux CLI Operations</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> Flask / HTMX / Bootstrap</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> SQLite / MySQL / SQL</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> Git / Docker / Jira</li>
+          <li class="skill-item"><i class="fa-solid fa-angle-right"></i> GDB / Valgrind / Pytest</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <div class="contact-box glass reveal">
+    <div class="contact-box reveal">
       <span class="section-label">04. What's Next?</span>
-      <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
-      <p>Whether you have a full-stack project in mind, need embedded systems expertise, or want to integrate Applied
-        AI, my inbox is always open.</p>
+      <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+      <p>I am always open to discussing <strong>embedded architecture</strong>, <strong>AI-integrated systems</strong>,
+        or high-performance software engineering. Whether you have a question or just want to say hi, my inbox is open.
+      </p>
 
       <div class="contact-links">
-        <a href="mailto:lahyus7399@gmail.com" class="btn btn-outline" style="min-width: 200px; justify-content:center;">
-          <i class="fa-regular fa-envelope"></i> Say Hello
+        <a href="mailto:lahyus7399@gmail.com" class="contact-link">
+          <i class="fa-solid fa-envelope"></i> lahyus7399@gmail.com
         </a>
-        <a href="https://www.linkedin.com/in/nhat-hy-la-40b379221/" target="_blank" class="btn btn-outline"
-          style="min-width: 200px; justify-content:center;">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://github.com/LahyUS" target="_blank" class="btn btn-outline"
-          style="min-width: 200px; justify-content:center;">
+        <a href="https://github.com/LahyUS" target="_blank" class="contact-link">
           <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/nhat-hy-la-40b379221/" target="_blank" class="contact-link">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>Designed and crafted with precision.</p>
-    <p>&copy; 2026 La Nhat Hy. All rights reserved.</p>
+    <p>&copy; 2026 La Nhat Hy — All rights reserved.</p>
   </footer>
 
   <script>
-    // Intersection Observer for scroll reveal animations
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealCallback = (entries, observer) => {
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
         }
       });
-    };
-    const revealOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-    const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
-    revealElements.forEach(el => revealObserver.observe(el));
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 
